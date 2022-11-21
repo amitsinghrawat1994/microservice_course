@@ -1,0 +1,48 @@
+dotnet new webapi -n Play.Catalog.Service -f net5.0
+dotnet dev-certs https --trust
+dotnet nuget add source D:\test_poc\Microservice\dotnetmicroservices\projects\Packages -n PlayEconomy
+dotnet add package Play.Common
+docker-compose up
+docker-compose up -d
+
+
+
+
+    "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+			 "label": "build",
+
+			 
+
+-----------------------------------------
+Progress
+-----------------------------------------
+07-11-2022
+	Your first microservice
+		Creating a microservice via the .NET CLI
+		Introduction to the REST API and DTOs
+        Adding the REST API operations
+	
+15-11-2022
+    Handling invalid inputs
+    Introduction to the repository pattern and MongoDB (working)
+
+16-11-2022
+    Implementing a MongoDB repository
+    Using the repository in the controller => 7:19
+17-11-2022
+    Trying out the REST API with a MongoDB container => 3:28
+    Implementing dependency injection and configuration
+19-11-2022
+    Refactoring MongoDB registration into extension methods
+
+21-11-2022
+	Creating the Inventory microservice => 20:58
+
+
+Commands
+Docker
+    docker run -d --rm --name mongo -p 27017:27017 -v mongodbdata:/data/db mongo
+    docker ps
