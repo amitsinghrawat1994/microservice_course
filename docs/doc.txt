@@ -1,3 +1,5 @@
+Commands:--
+--------------------------------
 dotnet new webapi -n Play.Catalog.Service -f net5.0
 dotnet dev-certs https --trust
 dotnet nuget add source D:\test_poc\Microservice\dotnetmicroservices\projects\Packages -n PlayEconomy
@@ -5,6 +7,10 @@ dotnet add package Play.Common
 docker-compose up
 docker-compose up -d
 
+
+Docker
+    docker run -d --rm --name mongo -p 27017:27017 -v mongodbdata:/data/db mongo
+    docker ps
 
 
 
@@ -40,9 +46,9 @@ Progress
 
 21-11-2022
 	Creating the Inventory microservice => 20:58
+	Introduction to asynchronous communication
+	Introduction to asynchronous communication
 
 
-Commands
-Docker
-    docker run -d --rm --name mongo -p 27017:27017 -v mongodbdata:/data/db mongo
-    docker ps
+22-11-2022
+	Publishing messages via MassTransit
