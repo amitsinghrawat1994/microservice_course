@@ -7,6 +7,7 @@ dotnet add package Play.Common
 docker-compose up
 docker-compose up -d
 
+dotnet pack -p:PackageVersion=1.0.1 -o ..\..\..\Packages\
 
 Docker
     docker run -d --rm --name mongo -p 27017:27017 -v mongodbdata:/data/db mongo
@@ -52,3 +53,4 @@ Progress
 
 22-11-2022
 	Publishing messages via MassTransit
+	
