@@ -9,6 +9,10 @@ docker-compose up -d
 
 dotnet pack -p:PackageVersion=1.0.1 -o ..\..\..\Packages\
 
+dotnet pack -o ..\..\..\packages\
+
+
+
 Docker
     docker run -d --rm --name mongo -p 27017:27017 -v mongodbdata:/data/db mongo
     docker ps
@@ -53,4 +57,13 @@ Progress
 
 22-11-2022
 	Publishing messages via MassTransit
+	
+
+
+
+isssue
+--------------------
+22-11-2022
+	--	Removing the inter-service synchronous communication
+	---	not sure but the inventory ItemsController inventoryItemRepository.GetAllAsync does not works
 	
