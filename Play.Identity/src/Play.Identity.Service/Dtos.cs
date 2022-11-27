@@ -8,7 +8,7 @@ namespace Play.Identity.Service.Dtos
         string UserName,
         string Email,
         decimal Gil,
-        DateTimeOffSet CreatedDate);
+        DateTimeOffset CreatedDate);
 
     public record UpdateUserDto(
         [Required][EmailAddress] string Email,
