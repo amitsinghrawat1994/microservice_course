@@ -7,11 +7,13 @@ using Play.Inventory.Dtos;
 using Play.Inventory.Service.Entities;
 using System.Linq;
 using Play.Inventory.Service.Clients;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Play.Inventory.Service.Controllers
 {
     [ApiController]
     [Route("items")]
+    [Authorize]
     public class ItemsController : ControllerBase
     {
         private readonly IRepository<InventoryItem> inventoryItemRepository;
