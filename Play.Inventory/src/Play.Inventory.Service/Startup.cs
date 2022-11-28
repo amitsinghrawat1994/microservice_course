@@ -73,7 +73,7 @@ namespace Play.Inventory.Service
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
-            {
+            { 
                 endpoints.MapControllers();
             });
         }
