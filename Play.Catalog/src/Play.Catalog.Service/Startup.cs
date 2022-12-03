@@ -44,15 +44,24 @@ namespace Play.Catalog.Service
             // });
             // services.AddMassTransitHostedService();
 
-            services.AddControllers(options =>
+            services.AddAuthorization(options =>
             {
-                options.SuppressAsyncSuffixInActionNames = false;
+                options.AddPolicy(Policies.Read, policy =>
+                 {
+                     policy.RequireRole("Admin");
+                     policy.RequireClaim("scope", "catalog.readaccess", "catalog.fullaccess");
+                 });
+
+                options.AddPolicy(Policies.Write, policy =>
+               {
+                   policy.RequireRole("Admin");
+                   policy.RequireClaim("scope", "catalog.writeaccess", "catalog.fullaccess");
+               });
             });
 
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Play.Catalog.Service", Version = "v1" });
-            });
+            services.AddControllers(options => options.SuppressAsyncSuffixInActionNames = false);
+
+            services.AddSwaggerGen(c => c.SwaggerDoc("v1", new OpenApiInfo { Title = "Play.Catalog.Service", Version = "v1" }));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
