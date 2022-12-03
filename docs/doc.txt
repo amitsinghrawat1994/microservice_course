@@ -25,6 +25,8 @@ Docker
             }
 			 "label": "build",
 
+-----------------------------------------------------
+openid profile catalog.fullaccess inventory.fullaccess IdentityServerApi
 			 
 
 -----------------------------------------
@@ -57,6 +59,12 @@ Progress
 
 22-11-2022
 	Publishing messages via MassTransit
+	
+28-11-2022
+	Implementing role-based authorization
+
+03-12-2022
+    Implementing role-based authorization
 	
 
 
